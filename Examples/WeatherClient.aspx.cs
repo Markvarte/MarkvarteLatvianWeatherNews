@@ -14,9 +14,13 @@ namespace MarkvarteLatvianWeatherNews.Examples
 
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-
+            WebService1 proxy = new WebService1();
+            string City = TextBox1.Text;
+            string xml = proxy.getWeatherByCity(City);
+            Xml1.DocumentContent = xml;
+            Xml1.TransformSource = "~/Examples/XML/Weather.xslt";
         }
     }
 }

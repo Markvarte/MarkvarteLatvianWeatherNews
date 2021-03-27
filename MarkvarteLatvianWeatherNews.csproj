@@ -116,6 +116,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Examples\WeatherClient.aspx" />
     <Content Include="Examples\WebService1.asmx" />
+    <Content Include="Examples\XML\Weather.xslt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -141,6 +142,7 @@
     <Content Include="medicinasSet.xss">
       <DependentUpon>medicinasSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\WebExamplesOfASPNET - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -281,6 +283,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
