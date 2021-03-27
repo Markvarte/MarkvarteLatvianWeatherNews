@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Services;
+using System.Xml;
 
 namespace MarkvarteLatvianWeatherNews.Examples
 {
@@ -55,7 +56,7 @@ namespace MarkvarteLatvianWeatherNews.Examples
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
 
-                smtpClient.Port = 44304;
+                smtpClient.Port = 2525;
                 smtpClient.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["mailuser"],
                     ConfigurationManager.AppSettings["mailpass"]);
                 smtpClient.EnableSsl = false;
@@ -66,6 +67,15 @@ namespace MarkvarteLatvianWeatherNews.Examples
             {
                 return "Fail";
             }
+        }
+
+        [WebMethod]
+        public string getWeatherByCity(string city)
+        {
+            string Url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&lang=la&units=metric&appid=83b1e84532b0db55a73b3da1c292a98a&mode=xml&ln=lv";
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(Url);
+            return xmlDocument.InnerXml;
         }
     }
 }

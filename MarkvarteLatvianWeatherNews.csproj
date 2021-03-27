@@ -114,6 +114,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Examples\WeatherClient.aspx" />
     <Content Include="Examples\WebService1.asmx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\WeatherClient.aspx.cs">
+      <DependentUpon>WeatherClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examples\WeatherClient.aspx.designer.cs">
+      <DependentUpon>WeatherClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Examples\WebService1.asmx.cs">
       <DependentUpon>WebService1.asmx</DependentUpon>
